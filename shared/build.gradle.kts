@@ -5,11 +5,11 @@ plugins {
 
 }
 
-//@OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
+@OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
 kotlin {
-   // targetHierarchy.default()
+    targetHierarchy.default()
 
-    android {
+    androidTarget() {
         compilations.all {
             kotlinOptions {
                 jvmTarget = "1.8"
@@ -56,12 +56,12 @@ kotlin {
         val iosX64Main by getting
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
-       /* val iosMain by getting{
+        val iosMain by getting{
             dependsOn(commonMain)
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
-        }*/
+        }
 
         val iosX64Test by getting
         val iosArm64Test by getting
